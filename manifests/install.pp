@@ -7,7 +7,7 @@ class autosign::install {
   # install the autosign gem
   package { $::autosign::package_name:
     ensure   => $::autosign::ensure,
-    provider => $::autosign::gem_provider,
+    provider => 'puppetserver_gem',
   }
 
   $dir_ensure = $::autosign::ensure ? {
@@ -19,7 +19,7 @@ class autosign::install {
   file {$::autosign::journalpath:
     ensure => $dir_ensure,
     mode   => '0750',
-    owner  => $::autosign::user,
-    group  => $::autosign::group,
+    owner  => 'pe-puppet',
+    group  => 'pe-puppet',
   }
 }

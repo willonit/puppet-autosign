@@ -18,8 +18,6 @@ class autosign (
   $package_name = $::autosign::params::package_name,
   $configfile   = $::autosign::params::configfile,
   $ensure       = $::autosign::params::ensure,
-  $user         = $::autosign::params::user,
-  $group        = $::autosign::params::group,
   $journalpath  = $::autosign::params::journalpath,
   $settings     = {},
 ) inherits ::autosign::params {

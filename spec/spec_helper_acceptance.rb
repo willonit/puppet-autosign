@@ -1,12 +1,10 @@
 require 'beaker-rspec/spec_helper'
 require 'beaker-rspec/helpers/serverspec'
+require 'beaker/puppet_install_helper'
 
-unless ENV['BEAKER_provision'] == 'no'
-  hosts.each do |host|
-    # Install Puppet
-    on host, 'curl https://raw.githubusercontent.com/danieldreier/puppet-installer/master/install_puppet.sh | bash'
-  end
-end
+
+run_puppet_install_helper
+
 
 RSpec.configure do |c|
   # Project root
