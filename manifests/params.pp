@@ -31,7 +31,7 @@ class autosign::params {
     'general' =>
       {
         'loglevel' => 'INFO',
-        'logfile'  => '/var/log/autosign.log',
+        'logfile' => '/var/log/autosign.log',
       },
     'jwt_token' =>
     {
