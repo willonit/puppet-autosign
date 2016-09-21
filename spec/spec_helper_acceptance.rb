@@ -25,6 +25,7 @@ RSpec.configure do |c|
       on host, 'puppet apply -e "host {$::fqdn: ip => $::ipaddress}"'
     # Install module and dependencies
       on host, puppet('module', 'install', 'puppetlabs-stdlib'), { :acceptable_exit_codes => [0,1] }
+      on host, puppet('module', 'install', 'puppetlabs-pupppetserver_gem'), { :acceptable_exit_codes => [0,1] }
     end
   end
 end
